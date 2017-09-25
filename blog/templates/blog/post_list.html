@@ -1,0 +1,25 @@
+ {% extends 'blog/base.html' %}
+ {% block content %}
+ 
+	<div class="container">
+		<ul class="collection">
+		{% for post in posts %}
+			
+				 <li class="collection-item avatar">
+				  <img src="images/yuna.jpg" alt="" class="circle">
+				  <span class="title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></span>
+				  <p>{{ post.published_date }} <br>
+					 {{ post.text|linebreaksbr }}
+				  </p>
+				  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+				</li>
+					
+			
+	
+		{% endfor %}
+		</ul>
+        
+			
+		
+     </div>
+{% endblock %}
